@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdentAgent.Me | The Omega Hub</title>
+    <style>
+        /* --- CORE VISUALS: XINFINITEX AESTHETIC --- */
+        :root {
+            --neon-green: #0f0;
+            --dark-bg: #050505;
+            --panel-bg: #111;
+            --border: 1px solid #333;
+        }
+        body {
+            background-color: var(--dark-bg);
+            color: var(--neon-green);
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        a { color: var(--neon-green); text-decoration: none; cursor: pointer; }
+        
+        /* --- HEADER --- */
+        .header {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid var(--neon-green);
+            background: #000;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+        .tagline { color: #fff; font-size: 0.8rem; margin-top: 5px; }
+
+        /* --- NAVIGATION GRID (THE HUB) --- */
+        .hub-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hub-card {
+            background: var(--panel-bg);
+            border: var(--border);
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .hub-card:hover {
+            background: var(--neon-green);
+            color: #000;
+            box-shadow: 0 0 15px var(--neon-green);
+        }
+        .icon { font-size: 2.5rem; display: block; margin-bottom: 10px; }
+        .title { font-weight: bold; font-size: 0.9rem; text-transform: uppercase; }
+
+        /* --- SECTIONS (HIDDEN BY DEFAULT) --- */
+        .section {
+            display: none; /* Hidden until activated */
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 0.5s;
+        }
+        .active-section { display: block; }
+        
+        h2 { border-bottom: 1px solid var(--neon-green); padding-bottom: 10px; color: #fff; }
+        p { color: #ccc; line-height: 1.6; }
+        
+        /* --- BACK BUTTON --- */
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 1px solid var(--neon-green);
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .back-btn:hover { background: var(--neon-green); color: #000; }
+
+        /* --- STORE BUTTONS --- */
+        .buy-btn {
+            background: var(--neon-green);
+            color: #000;
+            padding: 15px;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        /* --- ANIMATION --- */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        /* --- FOOTER --- */
+        footer { text-align: center; padding: 30px; color: #555; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">IdentAgent.Me</div>
+        <div class="tagline">Powered by XinfiniteX & BACNBIZ</div>
+    </div>
+
+    <div id="hub" class="active-section">
+        <div class="hub-grid">
+            <div class="hub-card" onclick="showSection('identity')">
+                <span class="icon">👁️</span>
+                <span class="title">Identity Security</span>
+            </div>
+            <div class="hub-card" onclick="showSection('metaverse')">
+                <span class="icon">🌐</span>
+                <span class="title">The Metaverse</span>
+            </div>
+            <div class="hub-card" onclick="showSection('business')">
+                <span class="icon">💼</span>
+                <span class="title">BACNBIZ</span>
+            </div>
+            <div class="hub-card" onclick="showSection('robotics')">
+                <span class="icon">🤖</span>
+                <span class="title">Dream Machines</span>
+            </div>
+            <div class="hub-card" onclick="showSection('gaming')">
+                <span class="icon">🎮</span>
+                <span class="title">Gaming Studios</span>
+            </div>
+            <div class="hub-card" onclick="showSection('music')">
+                <span class="icon">🎵</span>
+                <span class="title">Music Prod.</span>
+            </div>
+            <div class="hub-card" onclick="showSection('ai')">
+                <span class="icon">🧠</span>
+                <span class="title">AI Omega Hub</span>
+            </div>
+            <div class="hub-card" style="border: 2px solid #fff;" onclick="showSection('store')">
+                <span class="icon">💲</span>
+                <span class="title">PAID STORE</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="identity" class="section">
+        <h2>IdentAgent Security</h2>
+        <p>The core of the system. We provide advanced identity proofing, digital locker services, and secure verification for the Metaverse.</p>
+        <p><strong>Status:</strong> OPERATIONAL</p>
+        <div class="back-btn" onclick="showHub()">Return to Hub</div>
+    </div>
+
+    <div id="metaverse" class="section">
+        <h2>XinfiniteX Eternity's</h2>
+        <p>A safe, available digital reality. Our goal is to connect all desires and needs into one seamless digital experience. From virtual real estate to digital asset management.</p>
+        <div class="back-btn" onclick="showHub()">Return to Hub</div>
+    </div>
+
+    <div id="business" class="section">
+        <h2>BACNBIZ Handy Heroes</h2>
+        <p>Real-world solutions meeting digital innovation. We handle project management, business deployment, and strategic planning.</p>
+        <div class="back-btn" onclick="showHub()">Return to Hub</div>
+    </div>
+
+    <div id="robotics" class="section">
+        <h2>Dream Machines & TekNoDeK</h2>
+        <p><strong>Divisions:</strong> Mini Mans Electro-Tech & Big BoYs Dream Machines.</p>
+        <p><strong>Current Projects:</strong> The Omni-Sphere Wheelchair (Magnetic Mobility) & Custom Robotics Workshops.</p>
+        <div class="back-btn" onclick="showHub()">Return to Hub</div>
+    </div>
+
+    <div id="gaming" class="section">
+        <h2>Gaming & Dev</h2>
+        <p>Specializing in realistic simulation (Fishing Sim World/Bassmaster style) and Xbox Development from Mobile interfaces.</p>
+        <div class="back-btn" onclick="showHub()">Return to Hub</div>
+    </div>
+
+    <div id="music" class="section">
+        <h2>Audio Productions</h2>
+        <p><strong>Genre:</strong> Heavy Metal Country Rap.</p>
+        <p>We produce high-octane custom beats, AI-enhanced music videos, and promotional content for artists.</p>
+        <div class="back-btn" onclick="showHub()">Return to Hub</div>
+    </div>
+
+    <div id="ai" class="section">
+        <h2>The AI Team</h2>
+        <p>Directed by Bryan Alan Couch. Advised by TLC (Tony).</p>
+        <p>This is the command center for our Multi-Agent Artificial Intelligence workforce.</p>
+        <div class="back-btn" onclick="showHub()">Return to Hub</div>
+    </div>
+
+    <div id="store" class="section">
+        <h2 style="color: gold;">OFFICIAL SERVICES STORE</h2>
+        <p>Hire the team behind the tech.</p>
+        
+        <div style="background:#111; padding:15px; margin-bottom:15px; border:1px solid #333;">
+            <h3>🎵 Music & Beat Commission</h3>
+            <p>Custom Heavy Metal/Country Rap Instrumental.</p>
+            <p style="font-size:1.2rem; color:#fff;">$50.00 / Track</p>
+            <a href="mailto:your_email@gmail.com" class="buy-btn">ORDER NOW</a>
+        </div>
+
+        <div style="background:#111; padding:15px; margin-bottom:15px; border:1px solid #333;">
+            <h3>🤖 Xbox/PC Tech Support</h3>
+            <p>Remote troubleshooting and setup assistance.</p>
+            <p style="font-size:1.2rem; color:#fff;">$30.00 / Hour</p>
+            <a href="mailto:your_email@gmail.com" class="buy-btn">BOOK APPOINTMENT</a>
+        </div>
+
+        <div style="background:#111; padding:15px; margin-bottom:15px; border:1px solid #333;">
+            <h3>🌐 Website Setup (Like This One)</h3>
+            <p>We build your digital beacon.</p>
+            <p style="font-size:1.2rem; color:#fff;">Starting at $100.00</p>
+            <a href="mailto:your_email@gmail.com" class="buy-btn">GET A QUOTE</a>
+        </div>
+
+        <div class="back-btn" onclick="showHub()">Return to Hub</div>
+    </div>
+
+    <footer>
+        &copy; 2025 IdentAgent.Me | All Rights Reserved
+    </footer>
+
+    <script>
+        function showSection(id) {
+            // Hide the Hub
+            document.getElementById('hub').style.display = 'none';
+            // Hide all other sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(div => div.style.display = 'none');
+            // Show the specific section
+            document.getElementById(id).style.display = 'block';
+            window.scrollTo(0,0);
+        }
+
+        function showHub() {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(div => div.style.display = 'none');
+            // Show Hub
+            document.getElementById('hub').style.display = 'block';
+            window.scrollTo(0,0);
+        }
+    </script>
+
+</body>
+</html>
