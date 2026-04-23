@@ -1,0 +1,668 @@
+from google import genai
+from google.genai import types
+
+# For Vertex AI:
+# PROJECT_ID='<add_here>'
+# client = genai.Client(vertexai=True, project=PROJECT_ID, location='us-central1')
+
+client = genai.Client()
+
+with open("example.png", "rb") as f:
+    image_bytes = f.read()
+
+with open("sample.mp3", "rb") as f:
+    audio_bytes = f.read()
+
+# Embed text, image, and audio 
+result = client.models.embed_content(
+    model="gemini-embedding-2-preview",
+    contents=[
+        "What is the meaning of life?",
+        types.Part.from_bytes(
+            data=image_bytes,
+            mime_type="image/png",
+        ),
+        types.Part.from_bytes(
+            data=audio_bytes,
+            mime_type="audio/mpeg",
+        ),
+    ],
+)
+
+print(result.embeddings)XML file does not appear to have any style information associated with it. The document tree is shown below.
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+<channel>
+<title>Gemini</title>
+<link>https://blog.google/products-and-platforms/products/gemini/</link>
+<description>Gemini</description>
+<atom:link href="https://blog.google/products-and-platforms/products/gemini/rss/" rel="self"/>
+<language>en-us</language>
+<lastBuildDate>Wed, 22 Apr 2026 16:15:00 +0000</lastBuildDate>
+<image>
+<url>https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_SparkIcon_.max-80x80.format-webp.webp</url>
+<title>Gemini</title>
+<link>https://blog.google/products-and-platforms/products/gemini/</link>
+</image>
+<item>
+<title>Gemini Embedding 2 is now generally available.</title>
+<link>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Embedding_2_social.max-600x600.format-webp.webp" width="540"/>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Embedding_2_social.max-600x600.format-webp.webp">We’re announcing the general availability of Gemini Embedding 2 via the Gemini API and Vertex AI.</description>
+<pubDate>Wed, 22 Apr 2026 16:15:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/</guid>
+<category>Gemini models</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>Gemini Embedding 2 is now generally available.</title>
+<description/>
+<site_name>Google</site_name>
+<url>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/</url>
+</og>
+</item>
+<item>
+<title>Make chats more natural and efficient with Continued Conversation, now in Gemini for Home</title>
+<link>https://blog.google/products-and-platforms/devices/how-to-use-gemini-continued-conversation/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/CoolingTo78F.max-600x600.format-webp.webp" width="540"/>
+<media:description>A mom and daughter relaxes in the living room with a smart speaker with Gemini for Home voice assistant on the side table.</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/CoolingTo78F.max-600x600.format-webp.webp">Since early access launched, millions of you have opted in to help shape Gemini for Home through your daily use and feedback. Today, we’re delivering on one of your top …</description>
+<pubDate>Tue, 21 Apr 2026 16:00:00 +0000</pubDate>
+<guid>https://blog.google/products-and-platforms/devices/how-to-use-gemini-continued-conversation/</guid>
+<category>Gemini</category>
+<category>Google Nest</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>Make chats more natural and efficient with Continued Conversation, now in Gemini for Home</title>
+<description/>
+<site_name>Google</site_name>
+<url>https://blog.google/products-and-platforms/devices/how-to-use-gemini-continued-conversation/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Mark Alexander</name>
+<title>Group Product Manager</title>
+<department>Gemini for Home Voice Assistant</department>
+<company/>
+</author>
+</item>
+<item>
+<title>Deep Research Max: a step change for autonomous research agents</title>
+<link>https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3.1-pro_deep-research-an.max-600x600.format-webp.webp" width="540"/>
+<media:description>Gemini Deep Research Agent</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3.1-pro_deep-research-an.max-600x600.format-webp.webp">Introducing Deep Research and Deep Research Max, the next generation of Google’s autonomous research agents.</description>
+<pubDate>Tue, 21 Apr 2026 15:30:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/</guid>
+<category>Gemini models</category>
+<category>Developer tools</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>Deep Research Max: a step change for autonomous research agents</title>
+<description>Introducing Deep Research and Deep Research Max, the next generation of Google’s autonomous research agents.</description>
+<site_name>Google</site_name>
+<url>https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Lukas Haas</name>
+<title>Product Manager</title>
+<department>Google DeepMind</department>
+<company/>
+</author>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Srinivas Tadepalli</name>
+<title>Program Manager</title>
+<department>Google DeepMind</department>
+<company/>
+</author>
+</item>
+<item>
+<title>Start vibe coding in AI Studio with your Google AI subscription.</title>
+<link>https://blog.google/innovation-and-ai/technology/developers-tools/google-one-ai-studio/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/g1-ais_keyword_DEV_header_dark.max-600x600.format-webp.webp" width="540"/>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/g1-ais_keyword_DEV_header_dark.max-600x600.format-webp.webp">Starting today, Google AI Pro and Ultra subscribers get increased usage limits in Google AI Studio. This update also includes access to Nano Banana Pro and Gemini Pro mo…</description>
+<pubDate>Mon, 20 Apr 2026 16:32:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/technology/developers-tools/google-one-ai-studio/</guid>
+<category>Google One</category>
+<category>Gemini</category>
+<category>Developer tools</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>Start vibe coding in AI Studio with your Google AI subscription.</title>
+<description/>
+<site_name>Google</site_name>
+<url>https://blog.google/innovation-and-ai/technology/developers-tools/google-one-ai-studio/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Seth Odoom</name>
+<title>Product Manager</title>
+<department>Google AI Studio</department>
+<company/>
+</author>
+</item>
+<item>
+<title>New ways to create personalized images in the Gemini app</title>
+<link>https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Blog_post_header.max-600x600.format-webp.webp" width="540"/>
+<media:description>Example images made with Personal Intelligence</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Blog_post_header.max-600x600.format-webp.webp">Nano Banana 2 now uses your personal context and Google Photos to create images that reflect your unique life.</description>
+<pubDate>Thu, 16 Apr 2026 16:00:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana/</guid>
+<category>Gemini App</category>
+<category>Google One</category>
+<category>Photos</category>
+<category>AI</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>New ways to create personalized images in the Gemini app</title>
+<description>Nano Banana 2 now uses your personal context and Google Photos to create images that reflect your unique life.</description>
+<site_name>Google</site_name>
+<url>https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Animish Sivaramakrishnan</name>
+<title>Group Product Manager</title>
+<department>Gemini App</department>
+<company/>
+</author>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>David Sharon</name>
+<title>Group Product Manager, Multimodal Generation Lead</title>
+<department>Gemini Apps</department>
+<company/>
+</author>
+</item>
+<item>
+<title>The Gemini app is now on Mac</title>
+<link>https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-mac-os/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_for_MacOS_01_Hero_16x9.max-600x600.format-webp.webp" width="540"/>
+<media:description>A blue background with a Gemini symbol in the center</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_for_MacOS_01_Hero_16x9.max-600x600.format-webp.webp">Google is bringing the Gemini app to macOS as a native desktop experience.</description>
+<pubDate>Wed, 15 Apr 2026 16:00:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-mac-os/</guid>
+<category>Gemini App</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>The Gemini app is now on Mac</title>
+<description>Google is bringing the Gemini app to macOS as a native desktop experience.</description>
+<site_name>Google</site_name>
+<url>https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-mac-os/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Michael Friedman</name>
+<title>Group Product Manager</title>
+<department>Gemini App</department>
+<company/>
+</author>
+</item>
+<item>
+<title>Gemini 3.1 Flash TTS: the next generation of expressive AI speech</title>
+<link>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3.1-flash-tts_blog_keywo.max-600x600.format-webp.webp" width="540"/>
+<media:description>Gemini logo next to the text "3.1 Flash TTS", all over colored dots</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3.1-flash-tts_blog_keywo.max-600x600.format-webp.webp">Gemini 3.1 Flash TTS is now available across Google products.</description>
+<pubDate>Wed, 15 Apr 2026 15:00:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/</guid>
+<category>Gemini models</category>
+<category>AI</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>Gemini 3.1 Flash TTS: the next generation of expressive AI speech</title>
+<description>Gemini 3.1 Flash TTS is now available across Google products.</description>
+<site_name>Google</site_name>
+<url>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Vilobh Meshram</name>
+<title>Senior Product Manager</title>
+<department/>
+<company/>
+</author>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Max Gubin</name>
+<title>Principal Research Engineer on behalf of the Gemini team</title>
+<department/>
+<company/>
+</author>
+</item>
+<item>
+<title>6 easy ways to study for finals with Gemini</title>
+<link>https://blog.google/products-and-platforms/products/education/gemini-finals-study-tips/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Tips_for_Final_Prep_hero.max-600x600.format-webp.webp" width="540"/>
+<media:description>A stylized illustration of a woman wearing teal headphones, smiling while working on a laptop at a desk. The background features abstract UI elements of Gemini tools.</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Tips_for_Final_Prep_hero.max-600x600.format-webp.webp">Learn how to use Gemini as your personal study partner — from turning messy lecture notes into podcasts to testing your knowledge with custom quizzes.</description>
+<pubDate>Fri, 10 Apr 2026 13:00:00 +0000</pubDate>
+<guid>https://blog.google/products-and-platforms/products/education/gemini-finals-study-tips/</guid>
+<category>Learning & Education</category>
+<category>Gemini</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>6 easy ways to study for finals with Gemini</title>
+<description>Learn how to use Gemini as your personal study partner — from turning messy lecture notes into podcasts to testing your knowledge with custom quizzes.</description>
+<site_name>Google</site_name>
+<url>https://blog.google/products-and-platforms/products/education/gemini-finals-study-tips/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Carol Walport</name>
+<title>Group Product Manager</title>
+<department/>
+<company/>
+</author>
+</item>
+<item>
+<title>The Gemini app can now generate interactive simulations and models.</title>
+<link>https://blog.google/innovation-and-ai/products/gemini-app/3d-models-charts/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/1_Visualize_how_fractals_work.max-600x600.format-webp.webp" width="540"/>
+<media:description>Text reading 'Visualize how fractals work' written into an AI prompt box</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/1_Visualize_how_fractals_work.max-600x600.format-webp.webp">Gemini can now transform your questions and complex topics into custom and interactive visualizations.</description>
+<pubDate>Thu, 09 Apr 2026 16:00:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/products/gemini-app/3d-models-charts/</guid>
+<category>Gemini App</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>The Gemini app can now generate interactive simulations and models.</title>
+<description/>
+<site_name>Google</site_name>
+<url>https://blog.google/innovation-and-ai/products/gemini-app/3d-models-charts/</url>
+</og>
+</item>
+<item>
+<title>6 ways Gemini can help you find your next home</title>
+<link>https://blog.google/products-and-platforms/products/gemini/google-gemini-home-buying-renting-tips/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Moving_Tips_hero.max-600x600.format-webp.webp" width="540"/>
+<media:description>Illustration of two people moving boxes and a Gemini symbol is in the center</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Moving_Tips_hero.max-600x600.format-webp.webp">Moving soon? See how Gemini can help you analyze neighborhoods, summarize inspection reports, visualize renovations and streamline your home search.</description>
+<pubDate>Thu, 09 Apr 2026 16:00:00 +0000</pubDate>
+<guid>https://blog.google/products-and-platforms/products/gemini/google-gemini-home-buying-renting-tips/</guid>
+<category>Gemini</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>6 ways Gemini can help you find your next home</title>
+<description>Moving soon? See how Gemini can help you analyze neighborhoods, summarize inspection reports, visualize renovations and streamline your home search.</description>
+<site_name>Google</site_name>
+<url>https://blog.google/products-and-platforms/products/gemini/google-gemini-home-buying-renting-tips/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Mike Darling</name>
+<title>Contributor</title>
+<department>The Keyword</department>
+<company/>
+</author>
+</item>
+<item>
+<title>Try notebooks in Gemini to easily keep track of projects</title>
+<link>https://blog.google/innovation-and-ai/products/gemini-app/notebooks-gemini-notebooklm/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Notebooks_header_2026_2096x1182.max-600x600.format-webp.webp" width="540"/>
+<media:description>UI showing a digital notebook for a grad school application underneath the Gemini and NotebookLM logos</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Notebooks_header_2026_2096x1182.max-600x600.format-webp.webp">Notebooks in Gemini give you a project base that connects the Gemini app with our AI-powered research partner, NotebookLM, for an easy workflow.</description>
+<pubDate>Wed, 08 Apr 2026 13:45:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/products/gemini-app/notebooks-gemini-notebooklm/</guid>
+<category>Gemini App</category>
+<category>Google Labs</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>Try notebooks in Gemini to easily keep track of projects</title>
+<description>Notebooks in Gemini give you a project base that connects the Gemini app with our AI-powered research partner, NotebookLM, for an easy workflow.</description>
+<site_name>Google</site_name>
+<url>https://blog.google/innovation-and-ai/products/gemini-app/notebooks-gemini-notebooklm/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Rebecca Zapfel</name>
+<title>Senior Product Manager</title>
+<department/>
+<company/>
+</author>
+</item>
+<item>
+<title>Here’s how we built Gmail to keep your data secure and private in the Gemini era.</title>
+<link>https://blog.google/products-and-platforms/products/gmail/privacy-in-gmail-with-gemini/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Blake_SS_2.max-600x600.format-webp.webp" width="540"/>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Blake_SS_2.max-600x600.format-webp.webp">Google doesn’t train Gemini using personal emails. Here’s how Google keeps private data secure in Gmail amid new AI model upgrades.</description>
+<pubDate>Tue, 07 Apr 2026 16:00:00 +0000</pubDate>
+<guid>https://blog.google/products-and-platforms/products/gmail/privacy-in-gmail-with-gemini/</guid>
+<category>Gemini</category>
+<category>Safety & Security</category>
+<category>Gmail</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>Here’s how we built Gmail to keep your data secure and private in the Gemini era.</title>
+<description/>
+<site_name>Google</site_name>
+<url>https://blog.google/products-and-platforms/products/gmail/privacy-in-gmail-with-gemini/</url>
+</og>
+</item>
+<item>
+<title>An update on our mental health work</title>
+<link>https://blog.google/innovation-and-ai/technology/health/mental-health-updates/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/MentalHealth_042026_hero.max-600x600.format-webp.webp" width="540"/>
+<media:description>"Google Safety Updates: AI & Mental Health" is overlaid on an image of three Googlers.</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/MentalHealth_042026_hero.max-600x600.format-webp.webp">We’re sharing an update on our mental health work, including some new changes to better connect people with the right information.</description>
+<pubDate>Tue, 07 Apr 2026 10:00:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/technology/health/mental-health-updates/</guid>
+<category>Google.org</category>
+<category>Gemini</category>
+<category>Health</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>An update on our mental health work</title>
+<description>We’re sharing an update on our mental health worThis XML file does not appear to have any style information associated with it. The document tree is shown below.
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+<channel>
+<title>Gemini</title>
+<link>https://blog.google/products-and-platforms/products/gemini/</link>
+<description>Gemini</description>
+<atom:link href="https://blog.google/products-and-platforms/products/gemini/rss/" rel="self"/>
+<language>en-us</language>
+<lastBuildDate>Wed, 22 Apr 2026 16:15:00 +0000</lastBuildDate>
+<image>
+<url>https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_SparkIcon_.max-80x80.format-webp.webp</url>
+<title>Gemini</title>
+<link>https://blog.google/products-and-platforms/products/gemini/</link>
+</image>
+<item>
+<title>Gemini Embedding 2 is now generally available.</title>
+<link>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Embedding_2_social.max-600x600.format-webp.webp" width="540"/>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Embedding_2_social.max-600x600.format-webp.webp">We’re announcing the general availability of Gemini Embedding 2 via the Gemini API and Vertex AI.</description>
+<pubDate>Wed, 22 Apr 2026 16:15:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/</guid>
+<category>Gemini models</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>Gemini Embedding 2 is now generally available.</title>
+<description/>
+<site_name>Google</site_name>
+<url>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2-generally-available/</url>
+</og>
+</item>
+<item>
+<title>Make chats more natural and efficient with Continued Conversation, now in Gemini for Home</title>
+<link>https://blog.google/products-and-platforms/devices/how-to-use-gemini-continued-conversation/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/CoolingTo78F.max-600x600.format-webp.webp" width="540"/>
+<media:description>A mom and daughter relaxes in the living room with a smart speaker with Gemini for Home voice assistant on the side table.</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/CoolingTo78F.max-600x600.format-webp.webp">Since early access launched, millions of you have opted in to help shape Gemini for Home through your daily use and feedback. Today, we’re delivering on one of your top …</description>
+<pubDate>Tue, 21 Apr 2026 16:00:00 +0000</pubDate>
+<guid>https://blog.google/products-and-platforms/devices/how-to-use-gemini-continued-conversation/</guid>
+<category>Gemini</category>
+<category>Google Nest</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>Make chats more natural and efficient with Continued Conversation, now in Gemini for Home</title>
+<description/>
+<site_name>Google</site_name>
+<url>https://blog.google/products-and-platforms/devices/how-to-use-gemini-continued-conversation/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Mark Alexander</name>
+<title>Group Product Manager</title>
+<department>Gemini for Home Voice Assistant</department>
+<company/>
+</author>
+</item>
+<item>
+<title>Deep Research Max: a step change for autonomous research agents</title>
+<link>https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3.1-pro_deep-research-an.max-600x600.format-webp.webp" width="540"/>
+<media:description>Gemini Deep Research Agent</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3.1-pro_deep-research-an.max-600x600.format-webp.webp">Introducing Deep Research and Deep Research Max, the next generation of Google’s autonomous research agents.</description>
+<pubDate>Tue, 21 Apr 2026 15:30:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/</guid>
+<category>Gemini models</category>
+<category>Developer tools</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>Deep Research Max: a step change for autonomous research agents</title>
+<description>Introducing Deep Research and Deep Research Max, the next generation of Google’s autonomous research agents.</description>
+<site_name>Google</site_name>
+<url>https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Lukas Haas</name>
+<title>Product Manager</title>
+<department>Google DeepMind</department>
+<company/>
+</author>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Srinivas Tadepalli</name>
+<title>Program Manager</title>
+<department>Google DeepMind</department>
+<company/>
+</author>
+</item>
+<item>
+<title>Start vibe coding in AI Studio with your Google AI subscription.</title>
+<link>https://blog.google/innovation-and-ai/technology/developers-tools/google-one-ai-studio/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/g1-ais_keyword_DEV_header_dark.max-600x600.format-webp.webp" width="540"/>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/g1-ais_keyword_DEV_header_dark.max-600x600.format-webp.webp">Starting today, Google AI Pro and Ultra subscribers get increased usage limits in Google AI Studio. This update also includes access to Nano Banana Pro and Gemini Pro mo…</description>
+<pubDate>Mon, 20 Apr 2026 16:32:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/technology/developers-tools/google-one-ai-studio/</guid>
+<category>Google One</category>
+<category>Gemini</category>
+<category>Developer tools</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>Start vibe coding in AI Studio with your Google AI subscription.</title>
+<description/>
+<site_name>Google</site_name>
+<url>https://blog.google/innovation-and-ai/technology/developers-tools/google-one-ai-studio/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Seth Odoom</name>
+<title>Product Manager</title>
+<department>Google AI Studio</department>
+<company/>
+</author>
+</item>
+<item>
+<title>New ways to create personalized images in the Gemini app</title>
+<link>https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Blog_post_header.max-600x600.format-webp.webp" width="540"/>
+<media:description>Example images made with Personal Intelligence</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Blog_post_header.max-600x600.format-webp.webp">Nano Banana 2 now uses your personal context and Google Photos to create images that reflect your unique life.</description>
+<pubDate>Thu, 16 Apr 2026 16:00:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana/</guid>
+<category>Gemini App</category>
+<category>Google One</category>
+<category>Photos</category>
+<category>AI</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>New ways to create personalized images in the Gemini app</title>
+<description>Nano Banana 2 now uses your personal context and Google Photos to create images that reflect your unique life.</description>
+<site_name>Google</site_name>
+<url>https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Animish Sivaramakrishnan</name>
+<title>Group Product Manager</title>
+<department>Gemini App</department>
+<company/>
+</author>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>David Sharon</name>
+<title>Group Product Manager, Multimodal Generation Lead</title>
+<department>Gemini Apps</department>
+<company/>
+</author>
+</item>
+<item>
+<title>The Gemini app is now on Mac</title>
+<link>https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-mac-os/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_for_MacOS_01_Hero_16x9.max-600x600.format-webp.webp" width="540"/>
+<media:description>A blue background with a Gemini symbol in the center</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_for_MacOS_01_Hero_16x9.max-600x600.format-webp.webp">Google is bringing the Gemini app to macOS as a native desktop experience.</description>
+<pubDate>Wed, 15 Apr 2026 16:00:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-mac-os/</guid>
+<category>Gemini App</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>The Gemini app is now on Mac</title>
+<description>Google is bringing the Gemini app to macOS as a native desktop experience.</description>
+<site_name>Google</site_name>
+<url>https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-mac-os/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Michael Friedman</name>
+<title>Group Product Manager</title>
+<department>Gemini App</department>
+<company/>
+</author>
+</item>
+<item>
+<title>Gemini 3.1 Flash TTS: the next generation of expressive AI speech</title>
+<link>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3.1-flash-tts_blog_keywo.max-600x600.format-webp.webp" width="540"/>
+<media:description>Gemini logo next to the text "3.1 Flash TTS", all over colored dots</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3.1-flash-tts_blog_keywo.max-600x600.format-webp.webp">Gemini 3.1 Flash TTS is now available across Google products.</description>
+<pubDate>Wed, 15 Apr 2026 15:00:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/</guid>
+<category>Gemini models</category>
+<category>AI</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>Gemini 3.1 Flash TTS: the next generation of expressive AI speech</title>
+<description>Gemini 3.1 Flash TTS is now available across Google products.</description>
+<site_name>Google</site_name>
+<url>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Vilobh Meshram</name>
+<title>Senior Product Manager</title>
+<department/>
+<company/>
+</author>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Max Gubin</name>
+<title>Principal Research Engineer on behalf of the Gemini team</title>
+<department/>
+<company/>
+</author>
+</item>
+<item>
+<title>6 easy ways to study for finals with Gemini</title>
+<link>https://blog.google/products-and-platforms/products/education/gemini-finals-study-tips/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Tips_for_Final_Prep_hero.max-600x600.format-webp.webp" width="540"/>
+<media:description>A stylized illustration of a woman wearing teal headphones, smiling while working on a laptop at a desk. The background features abstract UI elements of Gemini tools.</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Tips_for_Final_Prep_hero.max-600x600.format-webp.webp">Learn how to use Gemini as your personal study partner — from turning messy lecture notes into podcasts to testing your knowledge with custom quizzes.</description>
+<pubDate>Fri, 10 Apr 2026 13:00:00 +0000</pubDate>
+<guid>https://blog.google/products-and-platforms/products/education/gemini-finals-study-tips/</guid>
+<category>Learning & Education</category>
+<category>Gemini</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>6 easy ways to study for finals with Gemini</title>
+<description>Learn how to use Gemini as your personal study partner — from turning messy lecture notes into podcasts to testing your knowledge with custom quizzes.</description>
+<site_name>Google</site_name>
+<url>https://blog.google/products-and-platforms/products/education/gemini-finals-study-tips/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Carol Walport</name>
+<title>Group Product Manager</title>
+<department/>
+<company/>
+</author>
+</item>
+<item>
+<title>The Gemini app can now generate interactive simulations and models.</title>
+<link>https://blog.google/innovation-and-ai/products/gemini-app/3d-models-charts/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/1_Visualize_how_fractals_work.max-600x600.format-webp.webp" width="540"/>
+<media:description>Text reading 'Visualize how fractals work' written into an AI prompt box</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/1_Visualize_how_fractals_work.max-600x600.format-webp.webp">Gemini can now transform your questions and complex topics into custom and interactive visualizations.</description>
+<pubDate>Thu, 09 Apr 2026 16:00:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/products/gemini-app/3d-models-charts/</guid>
+<category>Gemini App</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>The Gemini app can now generate interactive simulations and models.</title>
+<description/>
+<site_name>Google</site_name>
+<url>https://blog.google/innovation-and-ai/products/gemini-app/3d-models-charts/</url>
+</og>
+</item>
+<item>
+<title>6 ways Gemini can help you find your next home</title>
+<link>https://blog.google/products-and-platforms/products/gemini/google-gemini-home-buying-renting-tips/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Moving_Tips_hero.max-600x600.format-webp.webp" width="540"/>
+<media:description>Illustration of two people moving boxes and a Gemini symbol is in the center</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Moving_Tips_hero.max-600x600.format-webp.webp">Moving soon? See how Gemini can help you analyze neighborhoods, summarize inspection reports, visualize renovations and streamline your home search.</description>
+<pubDate>Thu, 09 Apr 2026 16:00:00 +0000</pubDate>
+<guid>https://blog.google/products-and-platforms/products/gemini/google-gemini-home-buying-renting-tips/</guid>
+<category>Gemini</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>6 ways Gemini can help you find your next home</title>
+<description>Moving soon? See how Gemini can help you analyze neighborhoods, summarize inspection reports, visualize renovations and streamline your home search.</description>
+<site_name>Google</site_name>
+<url>https://blog.google/products-and-platforms/products/gemini/google-gemini-home-buying-renting-tips/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Mike Darling</name>
+<title>Contributor</title>
+<department>The Keyword</department>
+<company/>
+</author>
+</item>
+<item>
+<title>Try notebooks in Gemini to easily keep track of projects</title>
+<link>https://blog.google/innovation-and-ai/products/gemini-app/notebooks-gemini-notebooklm/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Notebooks_header_2026_2096x1182.max-600x600.format-webp.webp" width="540"/>
+<media:description>UI showing a digital notebook for a grad school application underneath the Gemini and NotebookLM logos</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Notebooks_header_2026_2096x1182.max-600x600.format-webp.webp">Notebooks in Gemini give you a project base that connects the Gemini app with our AI-powered research partner, NotebookLM, for an easy workflow.</description>
+<pubDate>Wed, 08 Apr 2026 13:45:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/products/gemini-app/notebooks-gemini-notebooklm/</guid>
+<category>Gemini App</category>
+<category>Google Labs</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>Try notebooks in Gemini to easily keep track of projects</title>
+<description>Notebooks in Gemini give you a project base that connects the Gemini app with our AI-powered research partner, NotebookLM, for an easy workflow.</description>
+<site_name>Google</site_name>
+<url>https://blog.google/innovation-and-ai/products/gemini-app/notebooks-gemini-notebooklm/</url>
+</og>
+<author xmlns:author="http://www.w3.org/2005/Atom">
+<name>Rebecca Zapfel</name>
+<title>Senior Product Manager</title>
+<department/>
+<company/>
+</author>
+</item>
+<item>
+<title>Here’s how we built Gmail to keep your data secure and private in the Gemini era.</title>
+<link>https://blog.google/products-and-platforms/products/gmail/privacy-in-gmail-with-gemini/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Blake_SS_2.max-600x600.format-webp.webp" width="540"/>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Blake_SS_2.max-600x600.format-webp.webp">Google doesn’t train Gemini using personal emails. Here’s how Google keeps private data secure in Gmail amid new AI model upgrades.</description>
+<pubDate>Tue, 07 Apr 2026 16:00:00 +0000</pubDate>
+<guid>https://blog.google/products-and-platforms/products/gmail/privacy-in-gmail-with-gemini/</guid>
+<category>Gemini</category>
+<category>Safety & Security</category>
+<category>Gmail</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>Here’s how we built Gmail to keep your data secure and private in the Gemini era.</title>
+<description/>
+<site_name>Google</site_name>
+<url>https://blog.google/products-and-platforms/products/gmail/privacy-in-gmail-with-gemini/</url>
+</og>
+</item>
+<item>
+<title>An update on our mental health work</title>
+<link>https://blog.google/innovation-and-ai/technology/health/mental-health-updates/</link>
+<media:content height="540" medium="image" url="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/MentalHealth_042026_hero.max-600x600.format-webp.webp" width="540"/>
+<media:description>"Google Safety Updates: AI & Mental Health" is overlaid on an image of three Googlers.</media:description>
+<description><img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/MentalHealth_042026_hero.max-600x600.format-webp.webp">We’re sharing an update on our mental health work, including some new changes to better connect people with the right information.</description>
+<pubDate>Tue, 07 Apr 2026 10:00:00 +0000</pubDate>
+<guid>https://blog.google/innovation-and-ai/technology/health/mental-health-updates/</guid>
+<category>Google.org</category>
+<category>Gemini</category>
+<category>Health</category>
+<og xmlns:og="http://ogp.me/ns#">
+<type>article</type>
+<title>An update on our mental health work</title>
+<description>We’re sharing an update on our mental healt/2NBUMk4PBduewBoKo
+
+MASTER GEMINI
+
+Think Tutorial
+
+218 likes, 8 comments. "Google Gemini Complete Beginners Guide 2026 (How To Use Gemini)"
+
+www.youtube.com
+
+12:51 PM SMS
